@@ -32,6 +32,9 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
+#gem to use forms
+gem 'simple_form'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
