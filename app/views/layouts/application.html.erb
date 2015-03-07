@@ -22,17 +22,26 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active">
-        	<%=link_to "New Tweet", new_tweet_path %>	
+
+    	<% if user_signed_in? %>
+	      <ul class="nav navbar-nav">
+	        <li class="active">
+	        	<%=link_to "New Tweet", new_tweet_path %>	
+	        </li>
+	        <li class="active">
+	        <%=link_to "All Tweets", tweets_path %>	
+	        </li>
+	      </ul>
+	    <% end %> 
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+        <li>
+			<% if user_signed_in? %>
+				<%=link_to "Log Out", destroy_user_session_path, method: :delete %>
+			<% else %>
+				<%=link_to "Sign In", new_user_session_path %>
+			<% end %>
         </li>
-        <li class="active">
-        <%=link_to "All Tweets", tweets_path %>	
-        </li>
-      </ul>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -49,6 +58,11 @@
 </nav>
 
 <div class='container'>
+	<% if user_signed_in? %>
+		The user is signed in
+	<% else %>
+		The user is not signed in
+	<% end %>
 	<%flash.each do |key,value| %>
 		<div class="alert alert-<%=key%>">
 			<%=value%>
