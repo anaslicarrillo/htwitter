@@ -35,6 +35,9 @@ gem 'spring',        group: :development
 #gem to use forms
 gem 'simple_form'
 
+#gem to manage users
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
