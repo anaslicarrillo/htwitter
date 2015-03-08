@@ -59,7 +59,7 @@
 
 <div class='container'>
 	<% if user_signed_in? %>
-		Welcome!
+		Welcome <%= current_user.email %>!
 	<% else %>
 		The user is not signed in
 	<% end %>
