@@ -41,6 +41,9 @@ gem 'devise'
 #gem to upload files
 gem 'carrierwave'
 
+#gem to add followers
+gem 'acts_as_follower'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
