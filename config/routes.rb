@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :tweets
   resources :profiles
   resources :follows, only: [:create, :destroy]
+  resources :hashtags, only: :show
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

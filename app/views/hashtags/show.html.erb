@@ -1,0 +1,7 @@
+<ul class="list-group">
+	<% @filtered_tweets.each do |tweet| %>
+		 <li class="list-group-item">
+			<%= tweet.content %> | <%= link_to tweet.user.profile.first_name, profile_path(tweet.user.profile) %>
+		</li>
+	<% end %>
+</ul>
